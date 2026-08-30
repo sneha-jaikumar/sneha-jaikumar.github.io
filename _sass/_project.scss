@@ -1,0 +1,323 @@
+.project-main {
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+}
+
+.project-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: clamp(1.25rem, 5vw, 2rem);
+  padding-right: clamp(1.25rem, 5vw, 2rem);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--type-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  opacity: 0.7;
+  background-image: none;
+  margin-bottom: 3rem;
+  transition: opacity 0.2s var(--ease-out);
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.project-kicker {
+  font-family: var(--type-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-link);
+  margin-bottom: 0.75rem;
+}
+
+.project-title {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.project-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.8;
+  line-height: 1.6;
+  max-width: 620px;
+  margin-bottom: 1.5rem;
+}
+
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3.5rem;
+
+  span {
+    font-family: var(--type-mono);
+    font-size: 0.75rem;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    opacity: 0.75;
+  }
+}
+
+.project-body {
+  h2 {
+    margin-top: 3rem;
+  }
+
+  h3 {
+    margin-top: 2rem;
+  }
+
+  p,
+  li {
+    line-height: 1.75;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+
+    th,
+    td {
+      text-align: left;
+      padding: 0.6rem 1rem 0.6rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    th {
+      font-family: var(--type-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      font-weight: 500;
+    }
+  }
+}
+
+.callout {
+  background-color: var(--color-surface);
+  border-left: 3px solid var(--color-link);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0 2.5rem;
+
+  p {
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: 0.75rem;
+  }
+}
+
+.arch-diagram-wrap {
+  margin: 2.5rem 0 1rem;
+  padding: 1.5rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+// .project-container has a fixed max-width of 720px once the viewport is wide
+// enough to stop constraining it, so above that point we can break the
+// diagram out to a wider, fixed pixel width using plain negative margins
+// instead of vw-based tricks (which mis-center once nested inside a
+// non-full-width ancestor like .project-container).
+@media (min-width: 1024px) {
+  .arch-diagram-wrap {
+    width: 960px;
+    max-width: none;
+    margin-left: -120px;
+    margin-right: -120px;
+  }
+}
+
+.arch-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 640px;
+}
+
+.diagram-caption {
+  font-family: var(--type-mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  opacity: 0.6;
+  margin: 0 0 2.5rem;
+}
+
+.arch-zone {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 1.25;
+  stroke-dasharray: 5 4;
+}
+
+.arch-zone-label {
+  font-family: var(--type-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  fill: var(--color-link);
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+
+.arch-box {
+  fill: var(--color-background);
+  stroke: var(--color-border);
+  stroke-width: 1.25;
+}
+
+.arch-box.is-key {
+  stroke: var(--color-link);
+  stroke-width: 1.75;
+}
+
+.arch-tag {
+  font-family: var(--type-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  fill: var(--color-link);
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+
+.arch-title {
+  font-family: var(--type-mono);
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--color-heading);
+}
+
+.arch-sub {
+  font-family: var(--type-mono);
+  font-size: 10px;
+  fill: var(--color-text);
+  opacity: 0.62;
+}
+
+.arch-arrow {
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+  opacity: 0.5;
+  fill: none;
+}
+
+.arch-arrow.is-emphasis {
+  stroke: var(--color-link);
+  opacity: 0.9;
+}
+
+.arch-arrowhead {
+  fill: var(--color-text);
+  opacity: 0.6;
+}
+
+.arch-arrowhead.is-emphasis {
+  fill: var(--color-link);
+  opacity: 0.9;
+}
+
+.arch-flow-label {
+  font-family: var(--type-mono);
+  font-size: 10px;
+  fill: var(--color-text);
+  opacity: 0.68;
+  text-anchor: middle;
+}
+
+.arch-node-dot {
+  fill: var(--color-link);
+  opacity: 0.9;
+}
+
+.arch-store {
+  fill: var(--color-background);
+  stroke: var(--color-border);
+  stroke-width: 1.25;
+  stroke-dasharray: 3 3;
+}
+
+.arch-connector {
+  stroke: var(--color-border);
+  stroke-width: 1.25;
+  stroke-dasharray: 4 3;
+  fill: none;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.video-filmstrip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  overflow-x: auto;
+}
+
+.video-filmstrip-item {
+  flex: 0 0 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.video-filmstrip-tag {
+  font-family: var(--type-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-link);
+  opacity: 0.85;
+}
+
+.video-filmstrip-item video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.video-filmstrip-arrow {
+  flex: 0 0 auto;
+  color: var(--color-link);
+  opacity: 0.55;
+  font-size: 1.1rem;
+  padding-top: 1.6rem;
+}
+
+@media (max-width: 700px) {
+  .video-filmstrip {
+    overflow-x: auto;
+  }
+
+  .video-filmstrip-item {
+    flex: 0 0 120px;
+  }
+}

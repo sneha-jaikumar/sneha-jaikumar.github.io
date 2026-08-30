@@ -1,6 +1,6 @@
 <header class="site-header">
   <nav class="site-nav">
-    <a href="#work">Work</a>
-    <a href="#projects">Projects</a>
+    <a href="{% if page.layout == 'home' %}#work{% else %}{{ '/' | relative_url }}#work{% endif %}">Work</a>
+    <a href="{% if page.layout == 'home' %}#projects{% else %}{{ '/' | relative_url }}#projects{% endif %}">Projects</a>
   </nav>
 </header>

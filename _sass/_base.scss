@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--type-serif);
   font-size: var(--type-size);
@@ -6,6 +10,7 @@ body {
   font-variant-numeric: var(--type-numeric);
   background-color: var(--color-background);
   color: var(--color-text);
+  transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
 }
 
 svg circle,
@@ -17,20 +22,29 @@ svg path {
 a {
   text-decoration: none;
   color: var(--color-link);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.25s var(--ease-out), opacity 0.25s var(--ease-out);
+  padding-bottom: 0.05em;
 
   &:focus,
   &:hover {
-    border-bottom: calc(var(--type-size) / 10) dotted currentColor;
+    background-size: 100% 1px;
     opacity: 0.9;
   }
 }
 
-header {
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
-  // margin-top: 1.5em;
-  // margin-bottom: 2em;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body,
+  a {
+    transition: none;
+  }
 }
 
 footer {

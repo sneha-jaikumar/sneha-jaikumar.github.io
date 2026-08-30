@@ -30,31 +30,41 @@
 }
 
 #particles-js .particles-photo {
-  width: 200px;
-  aspect-ratio: 1 / 1;   
-  height: auto;          
-  object-fit: cover;     
-  border-radius: 75%;   
+  width: 168px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
   display: block;
-  margin: 0 auto 0.75em;
+  margin: 0 auto 1.25em;
+  border: 2px solid color-mix(in srgb, var(--color-particles-text) 25%, transparent);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--color-particles-text) 6%, transparent);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 10px color-mix(in srgb, var(--color-particles-text) 9%, transparent);
+  }
 }
 
 .particles-title {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: clamp(1.75rem, 5vw, 3rem);
   font-weight: 300;
+  letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
 .particles-subtitle {
-  margin: 1.5em 0 7rem 0;
-  font-size: 1.2rem;       
+  margin: 1.25em 0 6rem 0;
+  font-size: 1.05rem;
   font-weight: 400;
-  max-width: 680px;      
-  line-height: 1.5;
+  max-width: 620px;
+  line-height: 1.6;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  opacity: 0.85;
 }
 
 .nowrap {
@@ -62,8 +72,11 @@
 }
 
 .particles-icon {
-  margin: 0 0.5em;
+  margin: 0 0.6em;
   pointer-events: all;
+  display: inline-block;
+  transition: transform 0.2s var(--ease-out), opacity 0.2s var(--ease-out);
+  opacity: 0.85;
 
   svg {
     -webkit-transform: scale(1.8);
@@ -79,6 +92,8 @@
   &:focus,
   &:hover {
     border: none;
+    opacity: 1;
+    transform: translateY(-2px);
 
     svg circle,
     svg path {
@@ -107,15 +122,28 @@
 }
 
 .theme-toggle-container {
+  display: flex;
+  justify-content: center;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  transform: translateX(-3rem);
+
+  .toggle-icon {
+    color: var(--color-particles-text);
+
+    svg circle,
+    svg path {
+      stroke: var(--color-particles-text) !important;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: color-mix(in srgb, var(--color-particles-text) 12%, transparent);
+    }
+  }
 }
 
 .content-wrap {
-  max-width: 1200px;      
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(0.75rem, 3vw, 2.5rem);
-  padding-right: clamp(1.5rem, 6vw, 5rem);
 }

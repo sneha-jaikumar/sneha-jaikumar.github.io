@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<article class="project-page">
+  {% include header.html %}
+  {% include toggler.html %}
+  <main class="project-main">
+    <div class="project-container">
+      <a class="back-link" href="{{ '/' | relative_url }}#projects">&larr; Back to projects</a>
+
+      <header class="project-hero">
+        {% if page.kicker %}<p class="project-kicker">{{ page.kicker }}</p>{% endif %}
+        <h1 class="project-title">{{ page.title }}</h1>
+        {% if page.subtitle %}<p class="project-subtitle">{{ page.subtitle }}</p>{% endif %}
+        {% if page.meta %}
+        <div class="project-meta-row">
+          {% for item in page.meta %}<span>{{ item }}</span>{% endfor %}
+        </div>
+        {% endif %}
+      </header>
+
+      <div class="project-body">
+        {{ content }}
+      </div>
+    </div>
+  </main>
+  {% include footer.html %}
+</article>

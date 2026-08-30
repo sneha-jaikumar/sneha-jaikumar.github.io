@@ -1,22 +1,16 @@
 @keyframes pulse {
   from {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-    opacity: .4;
+    opacity: 0.45;
     top: 0;
   }
 
   50% {
-    -ms-filter: none;
-    filter: none;
     opacity: 1;
-    top: -1rem;
+    top: -0.4rem;
   }
 
   to {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-    opacity: .4;
-    top: 0
+    opacity: 0.45;
+    top: 0;
   }
 }

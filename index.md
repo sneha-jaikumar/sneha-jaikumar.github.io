@@ -121,11 +121,30 @@ title: Home
     <button class="filter-btn is-active" data-filter="all" role="tab">All</button>
     <button class="filter-btn" data-filter="papers" role="tab">Papers</button>
     <button class="filter-btn" data-filter="web" role="tab">Web</button>
+    <button class="filter-btn" data-filter="robotics" role="tab">Robotics</button>
     <button class="filter-btn" data-filter="ml" role="tab">Machine Learning</button>
   </div>
 
   <!-- Project grid -->
   <div class="project-grid">
+
+    <!-- Robotics -->
+    <article class="project-card" data-category="robotics">
+      <h3>From Phone Video to Humanoid Robot</h3>
+      <p class="project-desc">
+        Built an end-to-end pipeline at Amazon that turns ordinary phone video into executable humanoid motion — validated on a physical Unitree G1 and now feeding a live robot demo at AWS re:Invent 2026.
+      </p>
+      <div class="project-tags">
+        <span>NVIDIA GEM-X</span>
+        <span>SOMA Retargeter</span>
+        <span>MuJoCo</span>
+        <span>Isaac Lab</span>
+        <span>AWS</span>
+      </div>
+      <a href="{{ '/projects/video-to-robot-pipeline/' | relative_url }}">
+        Read the full story →
+      </a>
+    </article>
 
     <!-- Paper -->
     <article class="project-card" data-category="papers">
