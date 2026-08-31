@@ -154,6 +154,32 @@
   min-width: 640px;
 }
 
+.arch-diagram-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 220px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  opacity: 0.55;
+  text-align: center;
+
+  .placeholder-title {
+    font-family: var(--type-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .placeholder-sub {
+    font-size: 0.85rem;
+  }
+}
+
 .diagram-caption {
   font-family: var(--type-mono);
   font-size: 0.78rem;
@@ -261,6 +287,16 @@
   stroke-width: 1.25;
   stroke-dasharray: 4 3;
   fill: none;
+}
+
+.video-wide {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
 }
 
 .video-grid {

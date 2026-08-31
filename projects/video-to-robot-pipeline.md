@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "From Phone Video to Humanoid Robot"
+title: "Scalable Human-to-Robot Demonstration Pipeline"
 permalink: /projects/video-to-robot-pipeline/
 kicker: "Internship · Amazon"
 subtitle: "How I turned ordinary phone video into executable humanoid robot motion."
@@ -203,12 +203,12 @@ The same five seconds of video, all the way through the pipeline — raw phone f
   </div>
   <span class="video-filmstrip-arrow">→</span>
   <div class="video-filmstrip-item">
-    <span class="video-filmstrip-tag">4 · Simulate</span>
+    <span class="video-filmstrip-tag">4 · MuJoCo Simulation</span>
     <video src="{{ '/projects/04-sim2sim.mov' | relative_url }}" controls muted playsinline preload="metadata"></video>
   </div>
   <span class="video-filmstrip-arrow">→</span>
   <div class="video-filmstrip-item">
-    <span class="video-filmstrip-tag">5 · Real robot</span>
+    <span class="video-filmstrip-tag">5 · G1 Unitree</span>
     <video src="{{ '/projects/05-real-robot.mov' | relative_url }}" controls muted playsinline preload="metadata"></video>
   </div>
 </div>

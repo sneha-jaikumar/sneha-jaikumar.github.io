@@ -115,7 +115,12 @@
 
     <!-- Timeline (left) --> 
     <div class="timeline">
-      <button type="button" class="timeline-item is-active" data-role="zuckerman" aria-controls="zuckerman" aria-selected="true">
+      <button type="button" class="timeline-item is-active" data-role="aws" aria-controls="aws" aria-selected="true">
+        <span class="timeline-date">May 2026 - Aug. 2026</span>
+        <span class="timeline-company">Amazon Web Services</span>
+      </button>
+
+      <button type="button" class="timeline-item" data-role="zuckerman" aria-controls="zuckerman">
         <span class="timeline-date">Sep 2025 – Present</span>
         <span class="timeline-company">Zuckerman Institute</span>
       </button>
@@ -139,8 +144,29 @@
     <!-- Details (right) -->
     <div class="work-details">
 
-        <div class="work-detail is-visible" id="zuckerman">
-            <h3>Graduate Research Assistant — Zuckerman Institute</h3>
+        <div class="work-detail is-visible" id="aws">
+            <h3>Solutions Architect Intern - Amazon Web Services</h3>
+
+            <p class="work-meta">
+                May 2026 – Aug. 2026 · Arlington, VA
+            </p>
+
+            <p class="work-skills">
+                Generative AI · Computer Vision · Stable Diffusion · Physical AI · Sim2Real
+            </p>
+
+            <ul>
+                <li>
+                Built an end-to-end multimodal vision pipeline combining SAM, Depth Anything V2, Claude, vector retrieval, and diffusion-based inpainting for spatially aware interior design visualization; deployed on AWS and selected as a People's Top Choice winner alongside 80 interns worldwide at the Global AI Solutions Expo.
+                </li>
+                <li>
+                Developed and validated a video-to-humanoid motion pipeline converting monocular phone video into executable Unitree G1 trajectories via 3D pose estimation, inverse kinematics retargeting, MuJoCo simulation, and NVIDIA SONIC whole-body control, enabling scalable demonstration collection for downstream VLA fine-tuning.
+                </li>
+            </ul>
+        </div>
+
+        <div class="work-detail" id="zuckerman">
+            <h3>Graduate Research Assistant - Zuckerman Institute</h3>
 
             <p class="work-meta">
                 Sep 2025 – Present · New York, NY
@@ -152,7 +178,7 @@
 
             <ul>
                 <li>
-                Designed an automated electrophysiology analysis pipeline extracting ~20 signal-level features per cell from injected current and voltage recordings across hundreds of mouse and human cells.
+                Designed an automated electrophysiology analysis pipeline extracting 43+ signal-level features per cell from injected current and voltage recordings across hundreds of mouse and human cells, each with millions of samples.
                 </li>
                 <li>
                 Applied signal processing techniques, including peak detection, input resistance estimation, and Savitzky–Golay filtering, to transform noisy biological time-series data into structured, quantitative features.
@@ -164,8 +190,8 @@
         </div>
 
       <div class="work-detail" id="mcmaster">
-        <h3>Systems Engineer — McMaster-Carr</h3>
-        <p class="work-meta">Aug. 2024 – Aug. 2025 · Chicago, IL</p>
+        <h3>Systems Engineer - McMaster-Carr</h3>
+        <p class="work-meta">Aug. 2024 - Aug. 2025 · Chicago, IL</p>
 
         <p class="work-skills">
           Disaster Recovery · Server Architecture · Networking · Cybersecurity
@@ -194,7 +220,7 @@
       </div>
 
       <div class="work-detail" id="apple-2022">
-        <h3>Software Engineering Intern — Apple</h3>
+        <h3>Software Engineering Intern - Apple</h3>
         <p class="work-meta">May 2022 - Aug. 2022 · Sunnyvale, CA</p>
 
         <p class="work-skills">
@@ -215,25 +241,27 @@
 
 <section id="projects" class="wide-section">
   <div class="section-inner">
-  <h2>Projects</h2>
+  <h2>A Few Things I've Built</h2>
 
   <!-- Category tabs -->
   <div class="project-filters" role="tablist">
     <button class="filter-btn is-active" data-filter="all" role="tab">All</button>
-    <button class="filter-btn" data-filter="papers" role="tab">Papers</button>
-    <button class="filter-btn" data-filter="web" role="tab">Web</button>
-    <button class="filter-btn" data-filter="robotics" role="tab">Robotics</button>
-    <button class="filter-btn" data-filter="ml" role="tab">Machine Learning</button>
+    <button class="filter-btn" data-filter="professional" role="tab">Professional</button>
+    <button class="filter-btn" data-filter="projects" role="tab">Projects</button>
+    <button class="filter-btn" data-filter="research" role="tab">Research</button>
   </div>
 
   <!-- Project grid -->
   <div class="project-grid">
 
-    <!-- Robotics -->
-    <article class="project-card" data-category="robotics">
-      <h3>From Phone Video to Humanoid Robot</h3>
+    <!-- Professional -->
+    <article class="project-card" data-category="professional">
+      <div class="project-card-top">
+        <span class="project-category-badge">Professional</span>
+      </div>
+      <h3>Scalable Human-to-Robot Demonstration Pipeline</h3>
       <p class="project-desc">
-        Built an end-to-end pipeline at Amazon that turns ordinary phone video into executable humanoid motion — validated on a physical Unitree G1 and now feeding a live robot demo at AWS re:Invent 2026.
+        Built an end-to-end pipeline at Amazon that turns ordinary phone video into executable humanoid motion - validated on a physical Unitree G1 and now feeding a live robot demo at AWS re:Invent 2026.
       </p>
       <div class="project-tags">
         <span>NVIDIA GEM-X</span>
@@ -247,8 +275,133 @@
       </a>
     </article>
 
-    <!-- Paper -->
-    <article class="project-card" data-category="papers">
+    <article class="project-card" data-category="professional">
+      <div class="project-card-top">
+        <span class="project-category-badge">Professional</span>
+      </div>
+      <h3>FurnishAI</h3>
+      <span class="project-award">
+          🏆 People's Choice Award - Global AI Solutions Expo
+      </span>
+      <p class="project-desc">
+        AI-powered interior design pipeline built at Amazon: Upload a room photo, pick an aesthetic, get a photorealistic furnished rendering with shoppable product cards.
+      </p>
+      <div class="project-tags">
+        <span>AWS</span>
+        <span>Bedrock Stable Image Inpaint</span>
+        <span>SageMaker SAM</span>
+        <span>Bedrock Titan Embeddings</span>
+        <span>SageMaker Depth Anything</span>
+        <span>Aurora Serverless DB</span>
+      </div>
+      <a href="/projects/furnishai/">
+        Read the full story →
+      </a>
+    </article>
+
+    <!-- Projects (ML-flavored) -->
+    <article class="project-card" data-category="projects">
+      <div class="project-card-top">
+        <span class="project-category-badge">Project</span>
+      </div>
+      <h3>HERA: Digital Safety, Grounded.</h3>
+      <p class="project-desc">
+        Ever tried confronting a teen about their screen time, only for it to instantly backfire? HERA is an AI-powered empathy assistant built to turn those tense digital-habit talks into actual, productive conversations, zero spying required.
+      </p>
+      <div class="project-tags">
+        <span>Python</span>
+        <span>Anthropic (Claude) API</span>
+        <span>White Circle API</span>
+      </div>
+      <a href="https://github.com/cosecE/hera" target="_blank" rel="noopener">
+          View Project →
+      </a>
+    </article>
+
+    <article class="project-card" data-category="projects">
+      <div class="project-card-top">
+        <span class="project-category-badge">Project</span>
+      </div>
+      <h3>Vibe Check: Speech Emotion Recognition</h3>
+      <p class="project-desc">
+        A classic use case for fine-tuning. We put AI through emotional intelligence boot camp so it can accurately decode your actual mood. Test it live with your own microphone below.
+      </p>
+      <div class="project-tags">
+        <span>Wav2Vec2</span>
+        <span>PyTorch</span>
+        <span>Hugging Face</span>
+        <span>Transformers</span>
+      </div>
+      <a href="https://github.com/cosecE/VibeCheck" target="_blank" rel="noopener">
+          View Project →
+      </a>
+    </article>
+
+    <article class="project-card" data-category="projects">
+      <div class="project-card-top">
+        <span class="project-category-badge">Project</span>
+      </div>
+      <h3>HouseLLM: Constrained Decoding for Clinical Information Extraction</h3>
+      <p class="project-desc">
+        If you've watched House, you get it. Here, we put doctor-patient conversations under the microscope to test what happens when you strictly force an LLM to output valid medical JSON.
+      </p>
+      <div class="project-tags">
+        <span>PyTorch</span>
+        <span>OpenAI API</span>
+        <span>LLaMA 3.2 (3B-Instruct)</span>
+        <span>pandas</span>
+        <span>numpy</span>
+        <span>scipy</span>
+        <span>matplotlib</span>
+        <span>Transformers</span>
+        <span>Hugging Face</span>
+      </div>
+      <a href="https://github.com/cosecE/houseLLM-constrained-decoding" target="_blank" rel="noopener">
+          View Project →
+      </a>
+    </article>
+
+    <article class="project-card" data-category="projects">
+      <div class="project-card-top">
+        <span class="project-category-badge">Project</span>
+      </div>
+      <h3>Mindflow: An agentic layer to your task management system</h3>
+      <p class="project-desc">
+        Built at the AWS x AGI House SLM Hackathon. Extract action items from voice, text, and notes, organizing them into prioritized tasks and follow-ups.
+      </p>
+      <div class="project-tags">
+        <span>Hackathon</span>
+        <span>AWS Trainium</span>
+        <span>TinyLlama</span>
+      </div>
+      <a href="https://github.com/sneha-jaikumar/mindflow" target="_blank" rel="noopener">
+          View Project →
+      </a>
+    </article>
+
+    <article class="project-card" data-category="projects">
+      <div class="project-card-top">
+        <span class="project-category-badge">Project</span>
+      </div>
+      <h3>Wellness Shopping Assistant</h3>
+      <p class="project-desc">
+        Built at the Columbia Engineering x Amazon Bedrock Innovation Challenge. AI wellness assistant that recommends personalized health products through natural conversation.
+      </p>
+      <div class="project-tags">
+        <span>Hackathon</span>
+        <span>AWS Bedrock</span>
+        <span>RAG</span>
+      </div>
+      <a href="https://docs.google.com/presentation/d/1Aqdil7_rKtnkpk8Mz7OFRoSWLmv7ukNE/edit?usp=sharing&amp;ouid=101253989768134728861&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">
+          View Slides →
+      </a>
+    </article>
+
+    <!-- Research -->
+    <article class="project-card" data-category="research">
+      <div class="project-card-top">
+        <span class="project-category-badge">Research</span>
+      </div>
       <h3>Undergraduate Honors Thesis: Modeling the Impact of Early Life Stress on Microglial Aging</h3>
       <p class="project-desc">
         Combined bulk and single-cell RNA sequencing data to identify microglial gene expression signatures linking early life stress to accelerated immune aging.
@@ -265,11 +418,14 @@
     </a>
     </article>
 
-    <article class="project-card" data-category="papers">
+    <article class="project-card" data-category="research">
+        <div class="project-card-top">
+          <span class="project-category-badge">Research</span>
+        </div>
         <h3>Scaled-Down Text-Conditional Diffusion Model (GLIDE-Inspired)</h3>
 
         <p class="project-desc">
-            Built a simplified text-to-image diffusion model that trianslates written prompts into images.
+            Built a simplified text-to-image diffusion model that translates written prompts into images.
         </p>
 
         <div class="project-tags">
@@ -284,7 +440,11 @@
         </a>
     </article>
 
-    <article class="project-card" data-category="papers">
+    <!-- Projects (web) -->
+    <article class="project-card" data-category="projects">
+        <div class="project-card-top">
+          <span class="project-category-badge">Project</span>
+        </div>
         <h3>Quantifying Gendered Cost Burdens in Everyday Spending and Healthcare</h3>
 
         <p class="project-desc">
@@ -302,8 +462,10 @@
         </a>
     </article>
 
-    <!-- Web -->
-    <article class="project-card" data-category="web">
+    <article class="project-card" data-category="projects">
+        <div class="project-card-top">
+          <span class="project-category-badge">Project</span>
+        </div>
         <h3>Trackio: Making Personal Finance Accessible to All</h3>
 
         <span class="project-award">
@@ -315,6 +477,7 @@
         </p>
 
         <div class="project-tags">
+            <span>Hackathon</span>
             <span>ReactJS </span>
             <span>CSS</span>
             <span> React Speech-to-Text API</span>
@@ -325,7 +488,10 @@
         </a>
     </article>
 
-    <article class="project-card" data-category="web">
+    <article class="project-card" data-category="projects">
+        <div class="project-card-top">
+          <span class="project-category-badge">Project</span>
+        </div>
         <h3>Track My Leader</h3>
 
         <span class="project-award">
@@ -337,6 +503,7 @@
         </p>
 
         <div class="project-tags">
+            <span>Hackathon</span>
             <span>HTML</span>
             <span>CSS</span>
             <span>Python</span>
@@ -349,31 +516,6 @@
         </a>
     </article>
 
-
-
-    <!-- ML -->
-     <article class="project-card" data-category="web">
-      <h3>Mindflow: An agentic layer to your task management system</h3>
-      <p class="project-desc">
-        Extract action items from voice, text, and notes, organizing them into prioritized tasks and follow-ups.
-      </p>
-      <div class="project-tags">
-        <span>AWS Tranium</span>
-        <span>TinyLlama</span>
-      </div>
-    </article>
-
-    <article class="project-card" data-category="ml">
-      <h3>Wellness Shopping Assistant</h3>
-      <p class="project-desc">
-        AI wellness assistant that recommends personalized health products through natural conversation, built with AWS Bedrock.
-      </p>
-      <div class="project-tags">
-        <span>AWS Bedrock</span>
-        <span>RAG</span>
-      </div>
-    </article>
-
   </div>
   </div>
 </section>
@@ -381,7 +523,7 @@
 
   </main>
   <footer>
-  <small>&copy; <time datetime="2026-08-30T17:12:53-04:00">2026</time>
+  <small>&copy; <time datetime="2026-08-31T01:20:55-04:00">2026</time>
     Sneha Jaikumar. All rights reserved.</small>
 </footer>
 
